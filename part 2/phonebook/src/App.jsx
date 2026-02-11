@@ -8,6 +8,7 @@ const App = () => {
   const [persons, setPersons] = useState([])
   const [newName, setNewName] = useState('')
   const [newNumber, setNewNumber] = useState('')
+  const [newPlace, setNewPlace] = useState('')
   const [filter, setFilter] = useState('')
 
   useEffect(() => {
@@ -22,7 +23,8 @@ const App = () => {
     event.preventDefault()
     const personObject = {
       name: newName,
-      number: newNumber
+      number: newNumber,
+      place: newPlace
     }
 
     const existingPerson = persons.find(p => p.name === newName)
@@ -35,6 +37,7 @@ const App = () => {
             setPersons(persons.map(p => p.id !== existingPerson.id ? p : returnedPerson))
             setNewName('')
             setNewNumber('')
+            setNewPlace('')
           })
           .catch(error => {
             alert(`Information of ${newName} has already been removed from server`)
@@ -50,6 +53,7 @@ const App = () => {
         setPersons(persons.concat(returnedPerson))
         setNewName('')
         setNewNumber('')
+        setNewPlace('')
       })
   }
 
@@ -76,6 +80,10 @@ const App = () => {
     setNewNumber(event.target.value)
   }
 
+  const handlePlaceChange = (event) => {
+    setNewPlace(event.target.value)
+  }
+
   const handleFilterChange = (event) => {
     setFilter(event.target.value)
   }
@@ -96,6 +104,8 @@ const App = () => {
         handleNameChange={handleNameChange}
         newNumber={newNumber}
         handleNumberChange={handleNumberChange}
+        newPlace={newPlace}
+        handlePlaceChange={handlePlaceChange}
       />
 
       <h3>Numbers</h3>
