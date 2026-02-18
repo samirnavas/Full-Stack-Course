@@ -1,0 +1,394 @@
+﻿
+> bloglist@1.0.0 test
+> cross-env NODE_ENV=test node --test --test-concurrency=1
+
+TAP version 13
+# [dotenv@17.3.1] injecting env (4) from .env -- tip: ≡ƒöÉ encrypt with Dotenvx: https://dotenvx.com
+# connecting to mongodb+srv://samirnavas:Samirnavas8355@bandb-cluster.3zkxjhf.mongodb.net/testBlogList?appName=BandB-Cluster
+# connected to MongoDB
+# Method: GET
+# Path:   /api/blogs
+# Body:   undefined
+# ---
+# Subtest: when there is initially some blogs saved
+    # Subtest: blogs are returned as json
+    ok 1 - blogs are returned as json
+      ---
+      duration_ms: 1475.1367
+      type: 'test'
+      ...
+# Method: GET
+# Path:   /api/blogs
+# Body:   undefined
+# ---
+    # Subtest: all blogs are returned
+    ok 2 - all blogs are returned
+      ---
+      duration_ms: 213.6987
+      type: 'test'
+      ...
+# Method: GET
+# Path:   /api/blogs
+# Body:   undefined
+# ---
+    # Subtest: the unique identifier property of the blog posts is named id
+    ok 3 - the unique identifier property of the blog posts is named id
+      ---
+      duration_ms: 216.2918
+      type: 'test'
+      ...
+    1..3
+ok 1 - when there is initially some blogs saved
+  ---
+  duration_ms: 1905.9812
+  type: 'suite'
+  ...
+# Method: POST
+# Path:   /api/login
+# Body:   { username: 'root', password: 'sekret' }
+# ---
+# Subtest: addition of a new blog
+    # Subtest: a valid blog can be added
+    not ok 1 - a valid blog can be added
+      ---
+      duration_ms: 224.2935
+      type: 'test'
+      location: 'C:\\Programming\\Full-Stack-Course\\part 4\\bloglist\\tests\\blog_api.test.js:57:5'
+      failureType: 'testCodeFailure'
+      error: 'expected 200 "OK", got 401 "Unauthorized"'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        TestContext.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\tests\blog_api.test.js:61:14)
+        Test.runInAsyncScope (node:async_hooks:214:14)
+        Test.run (node:internal/test_runner/test:1047:25)
+        process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        async Promise.all (index 0)
+        async Suite.run (node:internal/test_runner/test:1442:7)
+        async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+        Test._assertStatus (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:309:14)
+        C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:365:13
+        Test._assertFunction (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:342:13)
+        Test.assert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:195:23)
+        localAssert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:138:14)
+        Server.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:152:11)
+        Object.onceWrapper (node:events:632:28)
+        Server.emit (node:events:518:28)
+        emitCloseNT (node:net:2419:8)
+        process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+      ...
+# Method: POST
+# Path:   /api/login
+# Body:   { username: 'root', password: 'sekret' }
+# ---
+    # Subtest: if likes property is missing from the request, it defaults to 0
+    not ok 2 - if likes property is missing from the request, it defaults to 0
+      ---
+      duration_ms: 214.9736
+      type: 'test'
+      location: 'C:\\Programming\\Full-Stack-Course\\part 4\\bloglist\\tests\\blog_api.test.js:86:5'
+      failureType: 'testCodeFailure'
+      error: 'expected 200 "OK", got 401 "Unauthorized"'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        TestContext.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\tests\blog_api.test.js:90:14)
+        Test.runInAsyncScope (node:async_hooks:214:14)
+        Test.run (node:internal/test_runner/test:1047:25)
+        process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+        Test._assertStatus (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:309:14)
+        C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:365:13
+        Test._assertFunction (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:342:13)
+        Test.assert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:195:23)
+        localAssert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:138:14)
+        Server.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:152:11)
+        Object.onceWrapper (node:events:632:28)
+        Server.emit (node:events:518:28)
+        emitCloseNT (node:net:2419:8)
+        process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+      ...
+# Method: POST
+# Path:   /api/login
+# Body:   { username: 'root', password: 'sekret' }
+# ---
+# Method: POST
+# Path:   /api/blogs
+# Body:   {
+#   author: 'Robert C. Martin',
+#   url: 'http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.htmll',
+#   likes: 10
+# }
+# ---
+# jwt malformed
+    # Subtest: if title is missing, response is 400 Bad Request
+    not ok 3 - if title is missing, response is 400 Bad Request
+      ---
+      duration_ms: 217.1002
+      type: 'test'
+      location: 'C:\\Programming\\Full-Stack-Course\\part 4\\bloglist\\tests\\blog_api.test.js:110:5'
+      failureType: 'testCodeFailure'
+      error: 'expected 400 "Bad Request", got 401 "Unauthorized"'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        TestContext.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\tests\blog_api.test.js:127:14)
+        process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        async Test.run (node:internal/test_runner/test:1054:7)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+        Test._assertStatus (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:309:14)
+        C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:365:13
+        Test._assertFunction (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:342:13)
+        Test.assert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:195:23)
+        localAssert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:138:14)
+        Server.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:152:11)
+        Object.onceWrapper (node:events:632:28)
+        Server.emit (node:events:518:28)
+        emitCloseNT (node:net:2419:8)
+        process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+      ...
+# Method: POST
+# Path:   /api/login
+# Body:   { username: 'root', password: 'sekret' }
+# ---
+# Method: POST
+# Path:   /api/blogs
+# Body:   {
+#   title: 'TDD harms architecture',
+#   author: 'Robert C. Martin',
+#   likes: 10
+# }
+# ---
+# jwt malformed
+    # Subtest: if url is missing, response is 400 Bad Request
+    not ok 4 - if url is missing, response is 400 Bad Request
+      ---
+      duration_ms: 214.7688
+      type: 'test'
+      location: 'C:\\Programming\\Full-Stack-Course\\part 4\\bloglist\\tests\\blog_api.test.js:130:5'
+      failureType: 'testCodeFailure'
+      error: 'expected 400 "Bad Request", got 401 "Unauthorized"'
+      code: 'ERR_TEST_FAILURE'
+      stack: |-
+        TestContext.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\tests\blog_api.test.js:147:14)
+        process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+        async Test.run (node:internal/test_runner/test:1054:7)
+        async Suite.processPendingSubtests (node:internal/test_runner/test:744:7)
+        Test._assertStatus (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:309:14)
+        C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:365:13
+        Test._assertFunction (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:342:13)
+        Test.assert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:195:23)
+        localAssert (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:138:14)
+        Server.<anonymous> (C:\Programming\Full-Stack-Course\part 4\bloglist\node_modules\supertest\lib\test.js:152:11)
+        Object.onceWrapper (node:events:632:28)
+        Server.emit (node:events:518:28)
+        emitCloseNT (node:net:2419:8)
+        process.processTicksAndRejections (node:internal/process/task_queues:89:21)
+      ...
+# Method: POST
+# Path:   /api/blogs
+# Body:   { title: 'No token', author: 'Unknown', url: 'http://example.com' }
+# ---
+# jwt must be provided
+    # Subtest: fails with 401 if token is not provided
+    ok 5 - fails with 401 if token is not provided
+      ---
+      duration_ms: 174.0169
+      type: 'test'
+      ...
+    1..5
+not ok 2 - addition of a new blog
+  ---
+  duration_ms: 1045.7218
+  type: 'suite'
+  location: 'C:\\Programming\\Full-Stack-Course\\part 4\\bloglist\\tests\\blog_api.test.js:56:1'
+  failureType: 'subtestsFailed'
+  error: '4 subtests failed'
+  code: 'ERR_TEST_FAILURE'
+  ...
+# Method: DELETE
+# Path:   /api/blogs/6995447ab0945cc5f60ce822
+# Body:   undefined
+# ---
+# Subtest: deletion of a blog
+    # Subtest: succeeds with status code 204 if id is valid
+    ok 1 - succeeds with status code 204 if id is valid
+      ---
+      duration_ms: 293.0252
+      type: 'test'
+      ...
+    1..1
+ok 3 - deletion of a blog
+  ---
+  duration_ms: 293.1809
+  type: 'suite'
+  ...
+# Method: PUT
+# Path:   /api/blogs/6995447ab0945cc5f60ce82c
+# Body:   { likes: 17 }
+# ---
+# (node:17972) [MONGOOSE] Warning: mongoose: the `new` option for `findOneAndUpdate()` and `findOneAndReplace()` is deprecated. Use `returnDocument: 'after'` instead.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: updating a blog
+    # Subtest: succeeds with status code 200 if id is valid
+    ok 1 - succeeds with status code 200 if id is valid
+      ---
+      duration_ms: 294.9483
+      type: 'test'
+      ...
+    1..1
+ok 4 - updating a blog
+  ---
+  duration_ms: 295.0871
+  type: 'suite'
+  ...
+# Subtest: dummy returns one
+ok 5 - dummy returns one
+  ---
+  duration_ms: 0.744
+  type: 'test'
+  ...
+# Subtest: total likes
+    # Subtest: when list has only one blog, equals the likes of that
+    ok 1 - when list has only one blog, equals the likes of that
+      ---
+      duration_ms: 0.134
+      type: 'test'
+      ...
+    # Subtest: when list has multiple blogs, equals the sum of likes
+    ok 2 - when list has multiple blogs, equals the sum of likes
+      ---
+      duration_ms: 0.1482
+      type: 'test'
+      ...
+    # Subtest: when list is empty, equals zero
+    ok 3 - when list is empty, equals zero
+      ---
+      duration_ms: 0.0887
+      type: 'test'
+      ...
+    1..3
+ok 6 - total likes
+  ---
+  duration_ms: 0.5913
+  type: 'suite'
+  ...
+# Subtest: favorite blog
+    # Subtest: returns the blog with the most likes
+    ok 1 - returns the blog with the most likes
+      ---
+      duration_ms: 0.729
+      type: 'test'
+      ...
+    # Subtest: returns null for empty list
+    ok 2 - returns null for empty list
+      ---
+      duration_ms: 0.0997
+      type: 'test'
+      ...
+    1..2
+ok 7 - favorite blog
+  ---
+  duration_ms: 1.0368
+  type: 'suite'
+  ...
+# Subtest: most blogs
+    # Subtest: returns the author with the most blogs
+    ok 1 - returns the author with the most blogs
+      ---
+      duration_ms: 0.7201
+      type: 'test'
+      ...
+    # Subtest: returns null for empty list
+    ok 2 - returns null for empty list
+      ---
+      duration_ms: 0.2154
+      type: 'test'
+      ...
+    1..2
+ok 8 - most blogs
+  ---
+  duration_ms: 1.8191
+  type: 'suite'
+  ...
+# Subtest: most likes
+    # Subtest: returns the author with the most likes
+    ok 1 - returns the author with the most likes
+      ---
+      duration_ms: 0.7115
+      type: 'test'
+      ...
+    # Subtest: returns null for empty list
+    ok 2 - returns null for empty list
+      ---
+      duration_ms: 0.234
+      type: 'test'
+      ...
+    1..2
+ok 9 - most likes
+  ---
+  duration_ms: 1.0323
+  type: 'suite'
+  ...
+# [dotenv@17.3.1] injecting env (4) from .env -- tip: ≡ƒñû agentic secret storage: https://dotenvx.com/as2
+# connecting to mongodb+srv://samirnavas:Samirnavas8355@bandb-cluster.3zkxjhf.mongodb.net/testBlogList?appName=BandB-Cluster
+# connected to MongoDB
+# Method: POST
+# Path:   /api/users
+# Body:   { username: 'root', name: 'Superuser', password: 'mypassword' }
+# ---
+# Subtest: addition of a new user
+    # Subtest: succeeds with a fresh username
+    ok 1 - succeeds with a fresh username
+      ---
+      duration_ms: 1476.8902
+      type: 'test'
+      ...
+# Method: POST
+# Path:   /api/users
+# Body:   { username: 'uk', password: 'mypassword' }
+# ---
+# User validation failed: username: Path `username` (`uk`, length 2) is shorter than the minimum allowed length (3).
+    # Subtest: fails if username is too short
+    ok 2 - fails if username is too short
+      ---
+      duration_ms: 103.1824
+      type: 'test'
+      ...
+# Method: POST
+# Path:   /api/users
+# Body:   { username: 'username', password: 'pw' }
+# ---
+    # Subtest: fails if password is too short
+    ok 3 - fails if password is too short
+      ---
+      duration_ms: 46.6546
+      type: 'test'
+      ...
+# Method: POST
+# Path:   /api/users
+# Body:   { username: 'root', password: 'mypassword' }
+# ---
+# Method: POST
+# Path:   /api/users
+# Body:   { username: 'root', password: 'mypassword' }
+# ---
+# E11000 duplicate key error collection: testBlogList.users index: username_1 dup key: { username: "root" }
+    # Subtest: fails if username is not unique
+    ok 4 - fails if username is not unique
+      ---
+      duration_ms: 241.3967
+      type: 'test'
+      ...
+    1..4
+ok 10 - addition of a new user
+  ---
+  duration_ms: 1869.255
+  type: 'suite'
+  ...
+1..10
+# tests 24
+# suites 9
+# pass 20
+# fail 4
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6709.9462
